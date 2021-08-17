@@ -1,6 +1,16 @@
-<%= form_with model:@book, url:"/books/#{@book.id}",local:true do |f| %>
+<%= form_with model:@book, url:"/todolists/#{@book.id}",local:true do |f| %>
 
   <p><%= f.text_field :title %></p>
   <p><%= f.text_area :body %></p>
 
+  <br><%= f.submit 'Update Book' %></br>
+
 <% end %>
+
+<span>
+  <%= link_to 'Show', todolist_path(@book.id) %>
+</span>
+
+<span>
+  <%= link_to 'Back', "/todolists" %>
+</span>

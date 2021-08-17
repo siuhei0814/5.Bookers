@@ -1,2 +1,10 @@
 <p><%= @book.title %></p>
 <p><%= @book.body %></p>
+
+<span>
+    <%= link_to 'Edit', edit_todolist_path(@book.id) %>
+</span>
+
+<span>
+    <%= link_to 'Back', "/todolists" %>
+</span>
