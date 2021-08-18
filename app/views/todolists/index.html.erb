@@ -36,9 +36,24 @@
 
 <h2>New book</h2>
 
+<% if @book.errors.any? %>
 
+  <%if @book.errors.count == 1 %>
+    <%= @book.errors.count %> error prohibited this book from being saved:
+    <br><% @book.errors.full_messages.each do |message| %></br>
+      <%= message %>
+    <% end %>
 
-<%= form_with model: @books.new, url:'/todolists',local:true do |f| %>
+  <% else %>
+    <%= @book.errors.count %> errors prohibited this book from being saved:
+    <br><% @book.errors.full_messages.each do |message| %></br>
+      <%= message %>
+    <% end %>
+  <% end %>
+
+<% end %>
+
+<%= form_with model: @book, url:'/todolists',local:true do |f| %>
 
   <p>Title</p>
   <%= f.text_field :title %>
