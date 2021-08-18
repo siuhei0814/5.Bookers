@@ -1,10 +1,17 @@
-<p><%= @book.title %></p>
-<p><%= @book.body %></p>
+<% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+<% end %>
 
-<span>
-    <%= link_to 'Edit', edit_todolist_path(@book.id) %>
-</span>
+<p>
+    <strong>Title:</strong>
+    <%= @book.title %>
+</p>
 
-<span>
-    <%= link_to 'Back', "/todolists" %>
-</span>
+<p>
+    <strong>Body:</strong>
+    <%= @book.body %>
+</p>
+
+<%= link_to 'Edit', edit_todolist_path(@book.id) %>
+<span>|</span>
+<%= link_to 'Back', "/todolists" %>
