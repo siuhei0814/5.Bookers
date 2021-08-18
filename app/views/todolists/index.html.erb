@@ -69,12 +69,12 @@
 <%= form_with model: @book, url:'/todolists',local:true do |f| %>
 
   <div class="field">
-    <label for="book_title">Title</label>
+    <%= f.label :title, "Title" %>
     <%= f.text_field :title %>
   </div>
 
   <div class="field">
-    <label for="book_body">Body</label>
+    <%= f.label :body, "Body" %>
     <%= f.text_area :body %>
   </div>
 
