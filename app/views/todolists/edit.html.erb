@@ -26,7 +26,7 @@
   <% end %>
 <% end %>
 
-<%= form_with model:@book, url:"/todolists/#{@book.id}",local:true do |f| %>
+<%= form_with model:@book, url:book_path,local:true do |f| %>
 
   <div class="field">
     <%= f.label :title, "Title" %>
@@ -44,7 +44,7 @@
 
 <% end %>
 
-<%= link_to 'Show', todolist_path(@book.id) %>
+<%= link_to 'Show', book_path(@book.id) %>
 <span>|</span>
-<%= link_to 'Back', "/todolists" %>
+<%= link_to 'Back', books_path %>
 

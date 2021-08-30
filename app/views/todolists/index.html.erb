@@ -19,12 +19,12 @@
       <td><span><%= book.body %></span></td>
       <td>
         <span>
-          <%= link_to 'Show', todolist_path(book.id) %>
+          <%= link_to 'Show', book_path(book.id) %>
         </span>
       </td>
       <td>
         <span>
-          <%= link_to 'Edit', edit_todolist_path(book.id) %>
+          <%= link_to 'Edit', edit_book_path(book.id) %>
         </span>
       </td>
       <td>
@@ -66,7 +66,7 @@
   <% end %>
 <% end %>
 
-<%= form_with model: @book, url:'/todolists',local:true do |f| %>
+<%= form_with model: @book, url:books_path,local:true do |f| %>
 
   <div class="field">
     <%= f.label :title, "Title" %>
