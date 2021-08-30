@@ -93,3 +93,7 @@ label{
   background-color: red;
   display: table;
 }
+
+.notice_color{
+  color: green;
+}
